@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TutorHunting_USTC</title>
+    <style>
+        body
+        {
+            background:#ffffff url('https://pic1.zhimg.com/80/v2-b1357a53415bb855f539ad53170ed440_1440w.webp');
+            background-repeat:no-repeat ;
+            background-size:100% 100%;
+            background-attachment: fixed;
+        }
+        h1{
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+        }
+        h3{
+
+        }
+        .inputbox{
+            width:500px
+            height:70px
+        }
+    </style>
+</head>
+<body>
+    <h1>Tutor-Hunting-USTC</h1>
+    <h2>——for students in the automation department</h2>
+    <h3>About {{tutor.name}}...</h3>
+    {% if tutor.email %}
+    <h3>Email: {{tutor.email}}</h3>
+    {% else %}
+    <h3>Email: Not available</h3>
+    {% endif %}
+
+    {% if tutor.homepage %}
+    <h3>Homepage: {{tutor.homepage}}</h3>
+    {% else %}
+    <h3>Homepage: Not available</h3>
+    {% endif %}
+
+    {% if tutor.phone %}
+    <h3>Phone: {{tutor.phone}}</h3>
+    {% else %}
+    <h3>Phone: Not available</h3>
+    {% endif %}
+
+</body>
+</html>
