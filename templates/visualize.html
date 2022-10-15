@@ -3,50 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <title>TutorHunting_USTC</title>
-    <style>
+    <style type="text/css">
         body
         {
             background:#ffffff url('https://pic1.zhimg.com/80/v2-b1357a53415bb855f539ad53170ed440_1440w.webp');
             background-repeat:no-repeat ;
             background-size:100% 100%;
             background-attachment: fixed;
+            margin = 0;
         }
-        h1{
+        /* 头部样式 */
+        .header {
+            padding: 10px;
             text-align: center;
         }
-        h2{
-            text-align: center;
+        /*导航条*/
+        .topnav {
+            overflow: hidden;
+            background-color: #330099;
+            opacity:0.8;
         }
-        h3{
 
+        /* 导航链接 */
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
         }
-        .inputbox{
-            width:500px
-            height:70px
+
+        /* 链接 - 修改颜色 */
+        .topnav a:hover {
+            background-color: #330099;
+            opacity: 0.5
+        }
+        .container1{
+            height:190px;
+            display: flex;
+        }
+        .left1{
+            width: 180px;
+        }
+        .right1{
+            width: 700px;
+            margin = 0 0;
+        }
+        .container2{
+            height:170px;
+            display: flex;
+        }
+        .left2{
+            width: 180px;
+            text-align: center;
+        }
+        .middle2{
+            width: 180px;
+            margin = 0 0;
+            text-align: center;
+        }
+        .right2{
+            width: 180px;
+            margin = 0 0;
+            text-align: center;
+        }
+        .tag1{
+            font-size:20px;
+            margin = 0 0;
+            font-weight:bold
+        }
+        .notag{
+            font-size:20px;
+            font-family:"Times New Roman", Times, serif;
+            font-weight:normal;
+            margin = 0 0;
+        }
+        p{
+            margin:0 0;
+        }
+        .btn1 {
+            background-color: white;
+            color: black;
+            border: 6px solid #008CBA;
+            font-size: 25px;
+            padding: 16px 32px;
+            margin: 4px 2px;
+        }
+        /* 悬停样式 */
+        .btn1:hover {
+            background-color: #008CBA;
+            color: white;
+            font-size: 30px;
         }
     </style>
 </head>
 <body>
-    <h1>Tutor-Hunting-USTC</h1>
-    <h2>——for students in the automation department</h2>
-    <h3>About {{tutor.name}}...</h3>
-    {% if tutor.email %}
-    <h3>Email: {{tutor.email}}</h3>
-    {% else %}
-    <h3>Email: Not available</h3>
-    {% endif %}
+    <div class="header">
+        <h1 align="center">Tutor-Hunting-USTC</h1>
+        <h2 align="center">——for students in the automation department</h2>
+    </div>
+    <h2>About {{tutor.name}}...</h2>
+    <div class="topnav">
+    <a href="#p1">Basic Info</a>
+    <a href="#p2">Useful Link</a>
+    <a href="#p3">Search In CNKI</a>
+    </div>
 
-    {% if tutor.homepage %}
-    <h3>Homepage: {{tutor.homepage}}</h3>
-    {% else %}
-    <h3>Homepage: Not available</h3>
-    {% endif %}
+    <h2 id="p1">Basic Info:</h2>
+    <div class="container1">
+        <div class="left1">
+            <img src={{tutor.picpath}} alt="https://ts1.cn.mm.bing.net/th/id/R-C.90adbd6b8f5f6bc726041bb3d8c1813e?rik=M5YoasW0nNOV7g&riu=http%3a%2f%2fwx3.sinaimg.cn%2flarge%2fbf976b12gy1gd5h7xbnkag2064064mxa.gif&ehk=Ko5VccGBB8H28UprSdEpjY6TZmVv4Zvo2qUXfIToom0%3d&risl=&pid=ImgRaw&r=0"
+            width="150" height="180">
+        </div>
 
-    {% if tutor.phone %}
-    <h3>Phone: {{tutor.phone}}</h3>
-    {% else %}
-    <h3>Phone: Not available</h3>
-    {% endif %}
+        <div class="right1">
+            <br>
+            <br>
+            {% if tutor.email %}
+            <p>
+                <span class="tag1">Email:&ensp;</span>
+                <span class="notag">{{tutor.email}}</span>
+            </p>
+            {% else %}
+            <p>
+                <span class="tag1">Email:&ensp;</span>
+                <span class="notag">Not available</span>
+            </p>
+            {% endif %}
 
+            {% if tutor.homepage %}
+            <p>
+                <span class="tag1">Homepage:&ensp;</span>
+                <span class="notag">http:{{tutor.homepage}}&ensp;</span>
+            </p>
+            {% else %}
+            <p>
+                <span class="tag1">Homepage:&ensp;</span>
+                <span class="notag">Not available</span>
+            </p>
+            {% endif %}
+
+            {% if tutor.phone %}
+            <p>
+                <span class="tag1">Phone:&ensp;</span>
+                <span class="notag">{{tutor.phone}}</span>
+            </p>
+            {% else %}
+            <p>
+                <span class="tag1">Phone:&ensp;</span>
+                <span class="notag">Not available</span>
+            </p>
+            {% endif %}
+
+        </div>
+    </div>
+
+    <br><br>
+    <h2 id="p2">Useful Link:</h2>
+    <h4>click the smiley face to get the websites you want!</h4>
+    <div class="container2">
+        <div class="left2">
+            <p>
+            <a href="https://auto.ustc.edu.cn/25976/list.htm">
+            <img border="0" src="https://pic.ntimg.cn/20121020/11181037_133457695112_2.jpg"
+                 width="50" height="50"></a>
+            </p>
+            <p>main page of automation department</p>
+        </div>
+        <div class="middle2">
+            <p>
+            <a href={{tutor.infopath}}>
+            <img border="0" src="https://pic.ntimg.cn/20130801/3978860_093434584171_2.jpg"
+             width="50" height="50"></a>
+            </p>
+            <p>detailed infomation about tutor on the official website</p>
+        </div>
+        <div class="right2">
+            <p>
+            <a href={{tutor.homepage}}>
+            <img border="0" src="https://pic.ntimg.cn/file/20200129/2860708_190811479085_2.jpg"
+                 width="50" height="50"></a>
+            </p>
+            <p>tutor's personal homepage</p>
+        </div>
+    </div>
+    <h2 id="p3">Search In CNKI:</h2>
+    <form method="post">
+        <button type="submit"  class = btn1>search</button>
+    </form>
+    <br><br><br><br>
 </body>
 </html>
